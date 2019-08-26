@@ -1,0 +1,21 @@
+<!-- NAV -->
+{% load static from staticfiles %}
+
+<nav>
+
+  <ul>
+    <li><img style="display:block; margin:2px; height:48px; width:auto;" src="{% static 'images/logo.png' %}"></li>
+    <li><a href="/">Home</a></li>
+    {% if user.is_authenticated %}
+      <li class="right"><a href="/Logout">Logout</a></li>
+      {% else %}
+      <li class="right"><a href="/Login">Login</a></li>
+      <li class="right"><a href="/Registro">Registro</a></li>
+      <li class="right"><a href="/Contacto">Contacto</a></li>
+    {% endif %}
+
+
+
+
+  </ul>
+</nav>

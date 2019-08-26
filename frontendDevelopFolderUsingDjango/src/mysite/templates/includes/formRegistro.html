@@ -1,0 +1,52 @@
+
+<section id="section-form" class="grid">
+  <div class="content-wrap">
+    <div class="form">
+
+      {% if form.errors %}
+        <p style="color: yellow;">Error.</p>
+      {% endif %}
+      <form action="" method="post" accept-charset="utf-8">{% csrf_token %}
+
+
+        <p style="color: #2ECC40;">{{ form.first_name.errors.as_text }}</p>
+        <label for="id_first_name"><b>nombre<b></label>
+        </br>
+        <input type="text" name="first_name" value="" id="first_name">
+        </br>
+
+        <p style="color: #2ECC40;">{{ form.last_name.errors.as_text }}</p>
+        <label for="id_last_name"><b>apellido<b></label>
+        </br>
+        <input type="text" name="last_name" value="" id="last_name">
+        </br>
+
+        <p style="color: #2ECC40;">{{ form.email.errors.as_text }}</p>
+        <label for="id_email"><b>email<b></label>
+        </br>
+        <input type="text" name="email" value="" id="email">
+        </br>
+
+        <p style="color: #2ECC40;">{{ form.telefono.errors.as_text }}</p>
+        <label for="id_telefono"><b>whatsapp<b></label>
+        </br>
+        <input type="text" name="telefono" value="" id="telefono">
+        </br>
+        </br>
+        <input type="submit" value="Registrarse" />
+        <input type="hidden" name="next" value="/" />
+        </br>
+        </br>
+
+
+
+
+
+
+
+
+
+      </form>
+    </div>
+  </div>
+</section>

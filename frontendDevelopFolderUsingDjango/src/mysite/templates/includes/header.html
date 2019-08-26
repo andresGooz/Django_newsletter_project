@@ -1,0 +1,13 @@
+<header id="showcase" class="grid">
+  <div class="bg-image"></div>
+    <div class="content-wrap">
+    <h1>VTR3</h1>
+
+    {% if user.is_authenticated %}
+      <p>Bienvenido {{user.username}}</p>
+      {% else %}
+      <p>la última oportunidad</p>
+    {% endif %}
+
+  </div>
+</header>

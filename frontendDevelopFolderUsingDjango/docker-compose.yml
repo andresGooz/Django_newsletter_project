@@ -1,0 +1,28 @@
+version: '2'
+services:
+####################################################
+  nginx:
+    image: nginx:latest
+    container_name: serverlessNginx
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/src
+      - ./config/nginx:/etc/nginx/conf.d
+      - /static:/static
+    depends_on:
+      - web
+####################################################
+  web:
+    build: .
+    container_name: serverlessWeb
+    command: bash -c "
+                      python manage.py collectstatic --noinput &&
+                      gunicorn mysite.wsgi -b 0.0.0.0:8000
+                      "
+    volumes:
+      - ./src:/src
+      - /static:/static
+    expose:
+      - "8000"
+####################################################
