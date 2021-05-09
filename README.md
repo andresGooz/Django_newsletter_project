@@ -1,4 +1,5 @@
-# serverlessAWS-basic-
+#
+Django_newsletter_project
 this is an AWS Lambda function basic framework to deploy and serve simple html pages.
 
 in serverlessAWS/ is the lambda function
